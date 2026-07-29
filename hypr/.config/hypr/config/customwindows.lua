@@ -4,29 +4,26 @@
 
 -- fastfetch boot left top (workspace 1)
 hl.window_rule({
-	name = "fastfetch-boot",
+	name = "fastfetch-popup",
 	match = {
-		title = "fastfetch-boot",
+		title = "fastfetch-popup",
 	},
-	workspace = "1 silent",
-	--    opacity = "0.8 override",
 	float = true,
 	size = { 677, 738 },
-	move = { 3, 27 },
+	center = true,
 	no_initial_focus = true,
 })
 
 -- btop boot bottom left (workspace 1)
 -- hl.window_rule({
---    name = "btop-boot",
+--    name = "btop-diagnostic",
 --    match = {
---	title = "btop-boot"
+--	title = "btop-diagnostic"
 --	},
---	workspace = "1 silent",
 --	opacity = "0.8 override",
 --	float = true,
 --	size = { 677, 366},
---	move = { 3, 399},
+--	center = true,
 --	no_initial_focus = true,
 --	})
 
@@ -56,6 +53,7 @@ hl.window_rule({
 	move = { "monitor_w-window_x-50", 50 },
 	pin = true,
 	stay_focused = true,
+	animation = "slide down",
 })
 
 -- Bluetooth Configurator (TUI Window inside Ghostty)
@@ -70,6 +68,7 @@ hl.window_rule({
 	move = { "monitor_w-window_x-50", 50 },
 	pin = true,
 	stay_focused = true,
+	animation = "slide down",
 })
 
 -- Pavucontrol Volume Configurator
@@ -84,6 +83,7 @@ hl.window_rule({
 	move = { "monitor_w-window_x-100", 50 },
 	pin = true,
 	stay_focused = true,
+	animation = "slide down",
 })
 
 -- Calendar waybar Configurator (launched via chromium)
@@ -98,4 +98,5 @@ hl.window_rule({
 	move = { "(monitor_w-window_x)*0.5", 50 },
 	pin = true,
 	stay_focused = true,
+	animation = "slide down",
 })
