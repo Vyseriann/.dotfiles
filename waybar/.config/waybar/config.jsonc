@@ -1,0 +1,438 @@
+{
+
+/////////////////////
+// GLOBAL SETTINGS //
+/////////////////////
+  "reload_style_on_change": true,
+  "position": "top",
+  "mod": "dock",
+  "fixed-center": true,
+  "margin-top": 3,
+  "height": 19,
+  "margin-left": 2,
+  "margin-right": 2,
+  "margin-bottom": 1,
+
+
+////////////////////
+// GROUP SETTINGS //
+////////////////////
+
+  //  -- lEFT GROUPS
+
+"group/left1": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/arch"
+      ]
+  },
+"group/left2": {
+    "orientation": "inherit",
+    "modules": [
+      "hyprland/workspaces",
+      "custom/separator1",
+      "hyprland/window"
+    ]
+  },
+  "group/left3": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/separator",
+    ]
+  },
+
+  // -- RIGHT GROUPS
+
+  "group/right1": {
+    "orientation": "inherit",
+    "modules":  [
+      "battery"
+    ]
+  },
+
+    "group/right2": {
+    "orientation": "inherit",
+    "modules":  [
+      "bluetooth",
+      "custom/tailscale",
+      "group/networking"
+    ]
+  },
+
+    "group/right3": {
+    "orientation": "inherit",
+    "modules":  [
+      "group/blight",
+      "group/audio"
+    ]
+  },
+
+    "group/right4": {
+    "orientation": "inherit",
+    "modules":  [
+      "group/tray-expander"
+    ]
+  },
+
+//////////////////////////////////////////////////////////////////////
+// LEFT, CENTER, RIGHT MODULES + WORKSPACES (group/left 2) SETTINGS //
+//////////////////////////////////////////////////////////////////////
+
+  "modules-left": ["group/left1", "group/left2"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "group/right4",
+    "group/right3",
+    "group/right2",
+    "group/right1"
+  ],
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+    }
+  },
+
+//////////////////////////
+// MODULE LEFT SETTINGS //
+//////////////////////////
+
+  // GROUP/LEFT1 MODULES //
+
+  "custom/arch": {
+    "format": " 󰣇 ",
+    "on-click": "hyprlock",
+    "on-click-right": "exec ghostty -e zsh -c 'fastfetch; exec zsh'",
+    "tooltip-format": "Left Click: Suspend
+Right Click: System Information"
+  },
+
+  // GROUP/LEFT2 - SEE WORKSPACES MODULE SETTINGS //
+
+    "custom/separator1": {
+    "format": "  ",
+    "tooltip": false
+  },
+
+    "hyprland/window": {
+    "format": "{class}",
+    "max-length": 20,
+    "rewrite": {
+      "": "Desktop",
+      "chromium": " Chromium",
+      "(.*chrome)...(.*)": " ",
+      "(.*) - Obsidian - .* - obsidian": "   ",
+      "nvim": " Nvim",
+      "(.*code) - (.*)": " 󰨞  ",
+      "btop": "󰧨 BTOP",
+      "^.*cmatrix( .*|$)": " 󰘨 MATRIX $1 ",
+      "Spotify": " Spotify",
+      "com.mitchellh.ghostty": "󰊠 Ghostty",
+      "(.*) - Alacritty": "   $1 ",
+      "(.*) - BeeperTexts": " 󰻞  $1 ",
+      "(.*Discord)...(.*).. (.*)": "   $2 ",
+      "nemo": " 󰣆 Files",
+      "(.*) - fish": "   [$1] ",
+      "Steam": " Steam",
+      "(.*imv)...(.*).. (.*)": " Image Viewer",
+      "(.*) - com.obsproject.Studio": "  $1 "
+    }
+  },
+
+  // GROUP/LEFT3 MODULES //
+
+   "custom/separator": {
+    "format": "  ",
+    "tooltip": false
+  },
+
+
+
+////////////////////////////
+// MODULE CENTER SETTINGS //
+////////////////////////////
+
+  "clock": {
+    "format": "{:%a %d %I:%M:%S %p}",
+    "interval": 1,
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "month": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+   "on-click": "chromium --class=calendar-pop --app=https://calendar.google.com"
+  },
+
+///////////////////////////
+// MODULE RIGHT SETTINGS //
+///////////////////////////  
+
+  // GROUP/RIGHT4 MODULES //
+
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-left-to-right": false,
+      "click-to-reveal": true,
+      "children-class": "tray-group-item"
+    },
+    "modules": [
+      "custom/expand-icon",
+      "custom/colorpicker",
+      "temperature",
+      "cpu",
+      "memory"
+    ]
+  },
+  "custom/expand-icon": {
+    "format": "  ",
+    "tooltip-format": "Utilities"
+  },
+
+    // colorpicker module
+  "custom/colorpicker": {
+    "format": "󰴱",
+    "tooltip-format": "Color Picker",
+    "on-click": "~/.config/waybar/custom_modules/notifications/colorpickernotification.sh"
+  },
+
+  "temperature": {
+    "format": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C",
+    "interval": 1,
+    "critical-threshold": 85
+  },
+ "cpu": {
+    "interval": 2,
+    "format": " {usage:02}%",
+    "on-click": "exec ghostty --title=btop -e btop"
+  },
+
+  "memory": {
+    "interval": 2,
+    "format": " {percentage:02}%",
+    "on-click": "exec ghostty --title=htop -e htop"
+  },
+
+  // GROUP/RIGHT3 MODULES //
+
+    "group/blight": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "backlight",
+      "backlight/slider"
+    ]
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "tooltip-format": "{percent}%",
+    "format-icons": [
+        "🌑",
+        "🌘",
+        "🌗",
+        "🌖",
+        "🌕"
+      ],
+    "on-scroll-down": "light -U 10",
+    "on-scroll-up": "light -A 10",
+    "smooth-scrolling-threshold": 1
+  },
+
+  "backlight/slider": {
+      "min": 0,
+      "max": 100,
+      "format": "<span font='12'>{icon}</span>",
+      "orientation": "horizontal",
+      "device": "intel_backlight"
+  },
+
+    "group/audio": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio#mic",
+      "pulseaudio/slider"
+    ]
+  },
+
+    "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}BT",
+    "format-muted": "",
+    "tooltip-format": "{volume}% {icon}",
+    "format-icons": {
+      "headphones": "",
+      "bluetooth": "󰥰",
+      "handsfree": "",
+      "headset": "󱡬",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "🕨",
+        "🕩",
+        "🕪"
+      ]
+    },
+      "scroll-step": 5,
+      "justify": "center",
+      "on-click": "amixer sset Master toggle",
+      "on-click-right": "pavucontrol",
+      "tooltip-format": "{volume}%  {icon}",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "tooltip-format": "{volume}% {format_source} ",
+    "on-click": "pactl set-source-mute 0 toggle",
+    "on-scroll-down": "pactl set-source-volume 0 -1%",
+    "on-scroll-up": "pactl set-source-volume 0 +1%"
+  },
+
+  // GROUP/RIGHT2 MODULES //
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-connected": "{num_connections}",
+    "tooltip-format": "{controller_alias} - No Connected Devices ",
+    "tooltip-format-connected": "Devices Connected: {device_alias} {device_battery_percentage} % 󰁹",
+    "on-click": "ghostty --title=bluetooth --command=bluetui"
+  },
+
+  "group/networking": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "network",
+      "network#speed"
+    ]
+  },
+
+  "network": {
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "nospacing": 1,
+    "on-click": "nmrs"
+  },
+
+    "network#speed": {
+    "format": "{bandwidthDownBits}",
+    "interval": 1,
+    "tooltip-format": "{ipaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)   \n{ipaddr} | {frequency} MHz{icon} ",
+    "tooltip-format-ethernet": "{ifname} 󰈀 \n{ipaddr} | {frequency} MHz{icon} ",
+    "tooltip-format-disconnected": "Not Connected to any type of Network",
+    "tooltip": true,
+    "on-click": "pgrep -x rofi &>/dev/null && notify-send rofi || networkmanager_dmenu"
+  },
+
+    "custom/tailscale": {
+    "exec": "~/.config/waybar/custom_modules/waybar-tailscale.sh --status 'ipv4'",
+    "on-click": "exec ~/.config/waybar/custom_modules/waybar-tailscale.sh --toggle",
+    "on-click-right": "exec ~/.config/waybar/custom_modules/waybar-tailscale.sh --select-exit-node",
+    "exec-on-event": true,
+    "format": "{icon}",
+      "format-icons": {
+        "connected": "󰒍",
+        "stopped": "󰒎"
+      },
+    "tooltip": true,
+    "return-type": "json",
+    "interval": 1
+  },
+
+  // GROUP/RIGHT1 MODULES //
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{capacity}% {icon}",
+    "format-charging": "{capacity}% {icon}",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
+    },
+    "format-full": "󰂅 {capacity}%",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {timeTo}",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {timeTo}",
+    "interval": 5,
+    "on-click": "omarchy-menu power",
+    "on-click-right": "notify-send -u low \"$(omarchy-battery-status)\"",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+//END//
+}

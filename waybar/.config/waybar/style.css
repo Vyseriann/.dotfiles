@@ -1,0 +1,408 @@
+
+@define-color background alpha(#0c0d0c, 0.8);
+@define-color foreground #C2A155;
+@define-color text #f0ebe9;
+@define-color cyan #89dceb;
+@define-color green #a6e3a1;
+@define-color red #FF0000;
+@define-color warning #fab387;
+
+/* --- Global-Settings ---*/
+
+* {
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 10px;
+  font-weight: bold;
+  min-height: 0px;
+  }
+
+  /* --- Waybar ---*/
+  window#waybar {
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+/* --- Tooltip ---*/
+tooltip {
+  opacity: 1;
+
+ }
+
+ /* --- Sub-Groups ---*/
+
+#left1{
+  border-radius: 26px;
+
+  margin: 0px 2px 1px 4px;
+  background-color: @background;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+#left2{
+  border-radius: 26px;
+  margin: 0px 2px 1px 2px;
+  background-color: @background;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+#left3{
+  border-radius: 26px;
+
+  margin: 0px 2px 1px 2px;
+  background-color: @background;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+#right1{
+  border-radius: 26px;
+
+  margin: 0px 4px 1px 2px;
+  background-color: @background;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+#right2{
+  border-radius: 26px;
+
+  margin: 0px 2px 1px 2px;
+  background-color: @background;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+#right3{
+  border-radius: 26px;
+
+  margin: 0px 2px 1px 2px;
+  background-color: @background;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+#right4{
+  border-radius: 26px;
+
+  margin: 0px 2px 1px 2px;
+  background-color: @background;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+}
+
+ /* --- Modules ---*/
+
+.modules-center {
+  border-radius: 26px;
+
+  margin: 0px 2px 1px 2px;
+  background-color: @background;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+ }
+
+/* --- Workspaces --- */
+#workspaces {
+  border-radius: 26px;
+  background-color: alpha(@background, 1);
+  opacity: 1;
+  margin: 0px;
+  padding: 1px 1px 1px;
+}
+
+#workspaces button {
+  padding: 0px 10px;
+  margin: 2px 2px;
+  border-radius: 24px;
+  background-color: alpha(@foreground, 0.5);
+  color: @background; 
+  transition: all 0.2s ease-in-out;
+  opacity: 0.95;
+}
+
+#workspaces button.active {
+  color: @background;
+  min-width: 20px;
+  background-color: alpha(@foreground, 0.9);
+  opacity: 1.0;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.empty {
+  background-color: alpha(@foreground, 0.4);
+  color: @foreground;
+  opacity: 0.45;
+  border-radius: 24px;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.empty.active {
+  background-color: alpha(@foreground, 0.9);
+  color: @background;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.empty:hover,
+#workspaces button:hover {
+  background: @foreground;
+  color: @background;
+   opacity: 0.65;
+}
+
+/* --- General Modules --- */
+
+#window,
+#group-tray-expander,
+#mpris,
+#cpu,
+#clock,
+#battery,
+#memory,
+#custom-colorpicker,
+#temperature,
+#backlight,
+#pulseaudio,
+#custom-tailscale,
+#custom-separator,
+#custom-separator1,
+#bluetooth,
+#network,
+#custom-arch {
+  min-width: 8px;
+  margin: 1px 1px 1px 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* Specific Module */
+
+
+
+/* GROUP/LEFT1 */
+
+#custom-arch {
+  color: @cyan;
+  font-size: 14px;
+  padding-right: 8px;
+}
+
+/* GROUP/LEFT2 */
+
+#hyprland-window {
+  color: @text;
+}
+
+#custom-separator1 {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+/* GROUP/LEFT3 */
+
+#custom-separator {
+  padding-right: 8px;
+}
+
+/* MIDDLE MODULES */
+
+
+/* GROUP/RIGHT4 */
+
+#custom-colorpicker {
+  font-size: 13px;
+  padding-left: 10px;
+}
+
+#temperature.critical {
+  color: @red;
+  padding-top: 0;
+}
+
+
+/* GROUP/RIGHT3 */
+
+#backlight {
+padding-top: 2px;
+padding-left: 5px;
+}
+
+#backlight-slider {
+   min-width: 100px;
+   padding: 0px;
+   margin: 0px 8px; /* Adds a small horizontal gap so it doesn't touch other modules */
+}
+/* The active/filled portion of the track */
+#backlight-slider highlight {
+    min-height: 10px; /* Must match the trough height */
+    border-radius: 5px;
+    background-color: @foreground; /* Color of your choice for the brightness level */
+}
+/* The actual draggable handle knob */
+#backlight-slider slider {
+    min-height: 10px; /* Keeps it flush with the bar height */
+    min-width: 10px;
+    border-radius: 26px;
+    background-image: none; /* Required by Waybar to let background-color work */
+    background-color: #ffffff; /* White indicator dot */
+}
+
+#pulseaudio {
+  padding-top: 4px;
+  padding-right: 7px;
+  font-size: 9px;
+}
+#pulseaudio.mic {
+    font-size: 12px;
+    padding-top: 1px;
+}
+#pulseaudio.mic-muted {
+    font-size: 9px; /* Keeps it large when muted */
+    padding-top: 1px;
+    color: @red;
+}
+#pulseaudio-slider {
+    /* Sets the overall width of the slider track */
+   min-width: 100px;
+   padding: 0px;
+   margin: 0px 8px; /* Adds a small horizontal gap so it doesn't touch other modules */
+}
+/* The active/filled portion of the track */
+#pulseaudio-slider highlight {
+    min-height: 10px; /* Must match the trough height */
+    border-radius: 5px;
+    background-color: @foreground; /* Color of your choice for the brightness level */
+}
+/* The actual draggable handle knob */
+#pulseaudio-slider slider {
+    min-height: 10px; /* Keeps it flush with the bar height */
+    min-width: 10px;
+    border-radius: 26px;
+    background-image: none; /* Required by Waybar to let background-color work */
+    background-color: #ffffff; /* White indicator dot */
+}
+
+#pulseaudio.muted {
+  color: @red;
+  padding-top: 1px;
+  padding-right: 9px;
+  font-size: 10px;
+}
+
+/* GROUP/RIGHT2 */
+
+#bluetooth {
+  font-size: 11px;
+  padding-left: 8px;
+}
+
+#custom-tailscale {
+  font-size: 11px;
+  padding-right: 7px;
+  padding-top: 2px;
+}
+#custom-tailscale.stopped {
+  font-size: 11px;
+  color: @red;
+}
+
+#network {
+  font-size: 11px;
+  padding-right: 10px;
+}
+
+/* GROUP/RIGHT1 */
+
+
+
+#battery {
+  padding-right: 8px;
+  padding-left: 7px;
+}
+#battery.warning {
+  color: #c95d0f;
+	 background-color: transparent;
+}
+#battery.critical:not(.charging) {
+  background-color: transparent;
+  color: #e6d8ba;
+  animation-name: blink2;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+
+/* GENERAL */
+
+
+#group-tray-expander {
+  border-radius: 24px;
+  background-color: transparent;
+  color: @foreground;
+}
+
+#tray {
+    background-color: transparent;
+    border-radius: 24px;
+    margin: 0 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @transparent;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+tooltip {
+ padding: 4px;
+ background: alpha(@background, 0.8);
+ border: 1px solid alpha(@foreground, 0.8);
+ border-radius: 8px;
+ box-shadow: 1px 1px 3px 1px #131313;
+ font-size: 9px;
+ 
+}
+tooltip label {
+    color: @foreground;
+    font-weight: normal;
+}
+
+/* Specific animation Module */
+
+@keyframes blink-recording {
+    to {
+        color: @background;
+    }
+}
+
+@keyframes blink {
+    to {
+        color: #4a4a4a;
+        
+    }
+}
+
+@keyframes blink-inhibitor {
+    to {
+        color: @background;
+    }
+}
+
+@keyframes blink2 {
+  to {
+    background-color: transparent;
+    color: #f53c3c;
+  }
+}
+
+
+/* END */
+
+
+
+
+

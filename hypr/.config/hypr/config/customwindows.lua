@@ -1,0 +1,101 @@
+--------------------------------
+--- CUSTOM WINDOW BEHAVIOURS ---
+--------------------------------
+
+-- fastfetch boot left top (workspace 1)
+hl.window_rule({
+	name = "fastfetch-boot",
+	match = {
+		title = "fastfetch-boot",
+	},
+	workspace = "1 silent",
+	--    opacity = "0.8 override",
+	float = true,
+	size = { 677, 738 },
+	move = { 3, 27 },
+	no_initial_focus = true,
+})
+
+-- btop boot bottom left (workspace 1)
+-- hl.window_rule({
+--    name = "btop-boot",
+--    match = {
+--	title = "btop-boot"
+--	},
+--	workspace = "1 silent",
+--	opacity = "0.8 override",
+--	float = true,
+--	size = { 677, 366},
+--	move = { 3, 399},
+--	no_initial_focus = true,
+--	})
+
+-- blank ghostty terminal right (workspace 1)
+hl.window_rule({
+	name = "ghostty-boot",
+	match = {
+		title = "ghostty-boot",
+	},
+	workspace = "1 silent",
+	--    opacity = "0.8 override",
+	float = true,
+	size = { 677, 738 },
+	move = { 686, 27 },
+	--    no_initial_focus = true,
+})
+
+-- WiFi Configurator (GUI Window)
+hl.window_rule({
+	name = "wifi-waybar",
+	match = {
+		class = "org.nmrs.ui",
+	},
+	float = true,
+	size = { 350, 450 },
+	-- Math: 1366 (Width) - 350 (Window) - 50 (Gap) = 980
+	move = { "monitor_w-window_x-50", 50 },
+	pin = true,
+	stay_focused = true,
+})
+
+-- Bluetooth Configurator (TUI Window inside Ghostty)
+hl.window_rule({
+	name = "bluetooth-waybar",
+	match = {
+		title = "bluetooth",
+	},
+	float = true,
+	size = { 350, 450 },
+	-- Math: 1366 (Width) - 350 (Window) - 50 (Gap) = 980
+	move = { "monitor_w-window_x-50", 50 },
+	pin = true,
+	stay_focused = true,
+})
+
+-- Pavucontrol Volume Configurator
+hl.window_rule({
+	name = "pavucontrol-waybar",
+	match = {
+		class = "org.pulseaudio.pavucontrol",
+	},
+	float = true,
+	size = { 400, 250 },
+	-- Math: 1366 (Width) - 350 (Window) - 100 (Gap) =
+	move = { "monitor_w-window_x-100", 50 },
+	pin = true,
+	stay_focused = true,
+})
+
+-- Calendar waybar Configurator (launched via chromium)
+hl.window_rule({
+	name = "calendar-waybar",
+	match = {
+		class = "chrome-calendar.google.com__-Profile_2",
+	},
+	float = true,
+	size = { 1200, 600 },
+	-- Math: 1366 (Width) - 1200 (Window) / 2 = 83; centred
+	move = { "(monitor_w-window_x)*0.5", 50 },
+	pin = true,
+	stay_focused = true,
+})

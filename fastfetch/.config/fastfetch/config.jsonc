@@ -1,0 +1,32 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/.config/fastfetch/ascii/arch.txt",
+        "height": 28,
+        "padding": { "bottom": 0 }
+    },
+    "display": { "separator": " " },
+    "modules": [
+        { "key": "╭─────────────╮", "type": "custom" },
+        { "key": "│   User     │", "type": "title", "format": "{user-name}" },
+        { "key": "│ 󰌢  Host     │", "type": "title", "format": "{host-name}" },
+        { "key": "│ 󰖩  Local    │", "type": "localip" },
+        { "key": "│ 󰖩  Public   │", "type": "publicip" },
+        { "key": "│   Distro   │", "type": "os" },
+        { "key": "│   Kernel   │", "type": "kernel" },
+        { "key": "│   WM       │", "type": "wm" },
+        { "key": "│   Terminal │", "type": "terminal" },
+        { "key": "│   Shell    │", "type": "shell" },
+        { "key": "├─────────────┤", "type": "custom" },
+        { "key": "│ Hardware    │", "type": "host", "format": "{5} {1} ({2})" },
+        { "key": "│ ├   Disp   │", "type": "monitor", "format": "{2}x{3} px @ {11} Hz" },	
+	      { "key": "│ ├ 󰍛  CPU    │", "type": "cpu", "showPeCoreCount": true },
+        { "key": "│ ├ 󰢮  GPU    │", "type": "gpu", "format": "{1} {2} @ {12}" },
+        { "key": "│ ├   Memory │", "type": "memory" },	
+        { "key": "│ ├ 󰓡  Swap   │", "type": "swap" },
+        { "key": "│ ├ 󰉉  Root   │", "type": "disk", "folders": "/" },
+        { "key": "│ ├ 󰉉  Home   │", "type": "disk", "folders": "/home" },
+        { "key": "╰─────────────╯", "type": "custom" },
+        { "type": "colors" }, 
+    ]
+}    
