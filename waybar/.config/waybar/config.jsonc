@@ -112,7 +112,7 @@
   "custom/arch": {
     "format": " 󰣇 ",
     "on-click": "hyprlock",
-    "on-click-right": "exec ghostty -e zsh -c 'fastfetch; exec zsh'",
+    "on-click-right": "exec ghostty --title=fastfetch-popup -e zsh -c 'fastfetch; exec zsh'",
     "tooltip-format": "Left Click: Suspend
 Right Click: System Information"
   },
@@ -428,7 +428,7 @@ Right Click: System Information"
     "tooltip-format-charging": "{power:>1.0f}W↑ {timeTo}",
     "interval": 5,
     "on-click": "exec auto-cpufreq-gtk",
-    "on-click-right": "notify-send -u low \"$(omarchy-battery-status)\"",
+//    "on-click-right": "",
     "states": {
       "warning": 20,
       "critical": 10

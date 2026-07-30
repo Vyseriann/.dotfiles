@@ -9,7 +9,7 @@ hl.window_rule({
 		title = "fastfetch-popup",
 	},
 	float = true,
-	size = { 677, 738 },
+	size = { 677, 550 },
 	center = true,
 	no_initial_focus = true,
 })
