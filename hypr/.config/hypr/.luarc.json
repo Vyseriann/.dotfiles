@@ -1,0 +1,11 @@
+{
+  "$schema": "https://githubusercontent.com",
+  "diagnostics": {
+    "globals": ["hl"]
+  },
+  "workspace": {
+    "library": [
+      "/usr/share/hyprland/stubs"
+    ]
+  }
+}
