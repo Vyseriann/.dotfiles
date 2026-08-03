@@ -329,7 +329,7 @@ Right Click: System Information"
     "format-connected": "{num_connections}",
     "tooltip-format": "{controller_alias} - No Connected Devices ",
     "tooltip-format-connected": "Devices Connected: {device_alias} {device_battery_percentage} % 󰁹",
-    "on-click": "ghostty --title=bluetooth --command=bluetui"
+    "on-click-right": "ghostty --title=bluetooth --command=bluetui"
   },
 
   "group/networking": {
@@ -361,7 +361,7 @@ Right Click: System Information"
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "nospacing": 1,
-    "on-click": "nmrs"
+    "on-click-right": "nmrs"
   },
 
     "network#speed": {

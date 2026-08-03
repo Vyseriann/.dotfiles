@@ -37,12 +37,12 @@ hl.bind(secondMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 -- Apps
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(music))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(telegram))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(launcher))
 hl.bind(secondMod .. "+ Space", hl.dsp.exec_cmd(runner))
 hl.bind(secondMod .. "+ N", hl.dsp.exec_cmd(truenas))
 hl.bind(secondMod .. "+ O", hl.dsp.exec_cmd(office))
-hl.bind(secondMod .. "+ M", hl.dsp.exec_cmd(telegram))
+hl.bind(secondMod .. "+ M", hl.dsp.exec_cmd(music))
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m output")) --printscreen whole monitor
 hl.bind("Print + Space", hl.dsp.exec_cmd("hyprshot -m region")) --printscreen selected region
 
