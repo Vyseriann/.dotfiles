@@ -23,7 +23,7 @@
 "group/left1": {
     "orientation": "inherit",
     "modules": [
-      "custom/arch"
+      "group/arch-expander"
       ]
   },
 "group/left2": {
@@ -74,9 +74,9 @@
     ]
   },
 
-//////////////////////////////////////////////////////////////////////
-// LEFT, CENTER, RIGHT MODULES + WORKSPACES (group/left 2) SETTINGS //
-//////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+// GLOBAL LEFT, CENTER, RIGHT MODULES + WORKSPACES (group/left 2) SETTINGS //
+/////////////////////////////////////////////////////////////////////////////
 
   "modules-left": ["group/left1", "group/left2"],
   "modules-center": ["clock"],
@@ -109,13 +109,47 @@
 
   // GROUP/LEFT1 MODULES //
 
-  "custom/arch": {
-    "format": " 󰣇 ",
-    "on-click": "hyprlock",
-    "on-click-right": "exec ghostty --title=fastfetch-popup -e zsh -c 'fastfetch; exec zsh'",
-    "tooltip-format": "Left Click: Suspend
-Right Click: System Information"
+  "group/arch-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-left-to-right": true,
+      "click-to-reveal": true,
+      "children-class": "tray-group-item"
+    },
+     "modules": [
+      "custom/arch",
+      "custom/info",
+      "custom/lock",
+      "custom/reboot",
+      "custom/poweroff"
+    ]
   },
+    "custom/arch": {
+    "format": " 󰣇 ",
+    "tooltip-format": "Power Options + System Info"
+  },
+    "custom/info": {
+    "format": "󰋽",
+    "tooltip-format": "Fastfetch",
+    "on-click": "exec ghostty --title=fastfetch-popup -e zsh -c 'fastfetch; exec zsh'"
+  },
+    "custom/lock": {
+    "format": "",
+    "tooltip-format": "Lock",
+    "on-click": "hyprlock"
+  },
+    "custom/reboot": {
+    "format": "󱥸",
+    "tooltip-format": "Reboot",
+    "on-click": "systemctl reboot"
+  },
+    "custom/poweroff": {
+    "format": "󰐥",
+    "tooltip-format": "Shut Down",
+    "on-click": "systemctl poweroff"
+  },
+
 
   // GROUP/LEFT2 - SEE WORKSPACES MODULE SETTINGS //
 
@@ -128,34 +162,21 @@ Right Click: System Information"
     "format": "{class}",
     "max-length": 40,
     "rewrite": {
-      "": "Claude Monet - En Norvégienne (1887) ",
+      "": "Monet - En Norvégienne (1887) ",
       "chromium": " Chromium ",
-      "(.*chrome)...(.*)": " ",
+      "chrome": " Chrome ",
       "(.*) - Obsidian - .* - obsidian": "   ",
       "nvim": " Nvim ",
-      "(.*code) - (.*)": " 󰨞  ",
       "btop": "󰧨 BTOP ",
-      "^.*cmatrix( .*|$)": " 󰘨 MATRIX $1 ",
       "Spotify": " Spotify ",
       "com.mitchellh.ghostty": "󰊠 Ghostty ",
-      "(.*) - Alacritty": "   $1 ",
-      "(.*) - BeeperTexts": " 󰻞  $1 ",
-      "(.*Discord)...(.*).. (.*)": "   $2 ",
       "nemo": " 󰣆 Files ",
-      "(.*) - fish": "   [$1] ",
       "Steam": " Steam ",
-      "(.*imv)...(.*).. (.*)": " Image Viewer ",
-      "(.*) - com.obsproject.Studio": "  $1 "
+      "(.*imv)...(.*).. (.*)": " Image Viewer "
     }
   },
 
   // GROUP/LEFT3 MODULES //
-
-   "custom/separator": {
-    "format": "  ",
-    "tooltip": false
-  },
-
 
 
 ////////////////////////////
@@ -170,14 +191,14 @@ Right Click: System Information"
       "mode": "month",
       "weeks-pos": "right",
       "mode-mon-col": 3,
-      "on-click-right": "mode",
+      "on-click": "mode",
       "format": {
         "month": "<span color='#ffead3'><b>{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
         "today": "<span color='#ff6699'><b>{}</b></span>"
       }
     },
-   "on-click": "chromium --class=calendar-pop --app=https://calendar.google.com"
+    "on-click-right": "chromium --class=calendar-pop --app=https://calendar.google.com"
   },
 
 ///////////////////////////
@@ -427,7 +448,7 @@ Right Click: System Information"
     "tooltip-format-discharging": "{power:>1.0f}W↓ {timeTo}",
     "tooltip-format-charging": "{power:>1.0f}W↑ {timeTo}",
     "interval": 5,
-    "on-click": "exec auto-cpufreq-gtk",
+//    "on-click": "exec auto-cpufreq-gtk",
 //    "on-click-right": "",
     "states": {
       "warning": 20,

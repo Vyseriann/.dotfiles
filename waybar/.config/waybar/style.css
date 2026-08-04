@@ -163,6 +163,10 @@ tooltip {
 #custom-separator1,
 #bluetooth,
 #network,
+#custom-poweroff,
+#cusutom-reboot,
+#custom-lock,
+#custom-info,
 #custom-arch {
   min-width: 8px;
   margin: 1px 1px 1px 1px;
@@ -180,6 +184,27 @@ tooltip {
   color: @cyan;
   font-size: 14px;
   padding-right: 8px;
+}
+
+#custom-info {
+  font-size: 13px;
+  padding-top: 1px;
+  padding-right: 8px;
+}
+#custom-poweroff {
+  font-size: 13px;
+  padding-right: 13px;
+  padding-top: 1px;
+}
+
+#custom-reboot {
+  font-size: 11px;
+  padding-right: 8px;
+}
+
+#custom-lock {
+  font-size: 11px;
+  padding-right: 11px;
 }
 
 /* GROUP/LEFT2 */
@@ -252,8 +277,9 @@ padding-left: 5px;
     padding-top: 1px;
 }
 #pulseaudio.source-muted {
-    font-size: 9px; /* Keeps it large when muted */
+    font-size: 10px; /* Keeps it large when muted */
     padding-top: 1px;
+    padding-right: 10px;
     color: @red;
 }
 #pulseaudio-slider {
