@@ -251,7 +251,7 @@ padding-left: 5px;
     font-size: 12px;
     padding-top: 1px;
 }
-#pulseaudio.mic-muted {
+#pulseaudio.source-muted {
     font-size: 9px; /* Keeps it large when muted */
     padding-top: 1px;
     color: @red;
