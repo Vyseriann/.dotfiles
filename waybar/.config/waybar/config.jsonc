@@ -74,6 +74,13 @@
     ]
   },
 
+    "group/right5": {
+    "orientation": "inherit",
+    "modules":  [
+      "mpris"
+    ]
+  },
+
 /////////////////////////////////////////////////////////////////////////////
 // GLOBAL LEFT, CENTER, RIGHT MODULES + WORKSPACES (group/left 2) SETTINGS //
 /////////////////////////////////////////////////////////////////////////////
@@ -81,6 +88,7 @@
   "modules-left": ["group/left1", "group/left2"],
   "modules-center": ["clock"],
   "modules-right": [
+    "group/right5",
     "group/right4",
     "group/right3",
     "group/right2",
@@ -203,7 +211,27 @@
 
 ///////////////////////////
 // MODULE RIGHT SETTINGS //
-///////////////////////////  
+///////////////////////////
+
+  // GROUP/RIGHT5 MODULES //
+
+
+    "mpris": {
+      "format": "{player_icon} {artist} - {title}",
+      "format-paused": "{status_icon} <i>{artist} - {title}</i>",
+      "max-length": 30,
+      "interval": 1,
+      "player-icons": {
+        "default": "▶",
+        "spotify": "",
+        "chromium": " "
+      },
+      "status-icons": {
+        "paused": "⏸ " 
+      },
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next"
+  },
 
   // GROUP/RIGHT4 MODULES //
 
