@@ -88,7 +88,7 @@
   "modules-left": ["group/left1", "group/left2"],
   "modules-center": ["clock"],
   "modules-right": [
-    "group/right5",
+//    "group/right5",
     "group/right4",
     "group/right3",
     "group/right2",
@@ -173,7 +173,7 @@
       "": "Monet - En Norvégienne (1887) ",
       "chromium": " Chromium ",
       "chrome": " Chrome ",
-      "(.*) - Obsidian - .* - obsidian": "   ",
+      "md.obsidian": "  Obsidian ",
       "nvim": " Nvim ",
       "btop": "󰧨 BTOP ",
       "Spotify": " Spotify ",

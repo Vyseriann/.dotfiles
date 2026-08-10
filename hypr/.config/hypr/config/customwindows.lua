@@ -15,30 +15,16 @@ hl.window_rule({
 })
 
 -- btop boot bottom left (workspace 1)
--- hl.window_rule({
---    name = "btop-diagnostic",
---    match = {
---	title = "btop-diagnostic"
---	},
---	opacity = "0.8 override",
---	float = true,
---	size = { 677, 366},
---	center = true,
---	no_initial_focus = true,
---	})
-
--- blank ghostty terminal right (workspace 1)
 hl.window_rule({
-	name = "ghostty-boot",
+	name = "btop-diagnostic",
 	match = {
-		title = "ghostty-boot",
+		title = "btop-diagnostic",
 	},
-	workspace = "1 silent",
-	--    opacity = "0.8 override",
+	opacity = "0.8 override",
 	float = true,
-	size = { 677, 738 },
-	move = { 686, 27 },
-	--    no_initial_focus = true,
+	size = { 677, 366 },
+	center = true,
+	no_initial_focus = true,
 })
 
 -- WiFi Configurator (GUI Window)
@@ -88,7 +74,7 @@ hl.window_rule({
 
 -- Calendar waybar Configurator (launched via chromium)
 hl.window_rule({
-	name = "calendar-waybar",
+	name = "calendar-pop",
 	match = {
 		class = "chrome-calendar.google.com__-Profile_2",
 	},

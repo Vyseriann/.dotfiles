@@ -14,6 +14,7 @@ local runner = "rofi -show run"
 local truenas = "chromium --app=https://192.168.18.7/ui/signin"
 local office = "onlyoffice-desktopeditors"
 local telegram = "chromium --app=https://web.telegram.org"
+local obsidian = "obsidian"
 
 --Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 
@@ -39,6 +40,7 @@ hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(telegram))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(launcher))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(obsidian))
 hl.bind(secondMod .. "+ Space", hl.dsp.exec_cmd(runner))
 hl.bind(secondMod .. "+ N", hl.dsp.exec_cmd(truenas))
 hl.bind(secondMod .. "+ O", hl.dsp.exec_cmd(office))
