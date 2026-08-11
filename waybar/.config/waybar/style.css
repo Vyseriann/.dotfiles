@@ -253,7 +253,7 @@ tooltip {
 
 #backlight {
 padding-top: 2px;
-padding-left: 5px;
+padding-left: 7px;
 }
 
 #backlight-slider {
@@ -282,11 +282,12 @@ padding-left: 5px;
   font-size: 9px;
 }
 #pulseaudio.mic {
-    font-size: 12px;
+    font-size: 10px;
     padding-top: 1px;
+    padding-right: 7px;
 }
 #pulseaudio.source-muted {
-    font-size: 10px; /* Keeps it large when muted */
+    font-size: 10px;
     padding-top: 2px;
     padding-right: 7px;
     color: @red;

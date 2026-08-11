@@ -307,17 +307,10 @@
 
     "pulseaudio": {
     "format": "{icon}",
-    "format-bluetooth": "{icon}BT",
+    "format-bluetooth": "{icon}BT ",
     "format-muted": "",
     "tooltip-format": "{volume}% {icon}",
     "format-icons": {
-      "headphones": "",
-      "bluetooth": "󰥰",
-      "handsfree": "",
-      "headset": "󱡬",
-      "phone": "",
-      "portable": "",
-      "car": "",
       "default": [
         "🕨",
         "🕩",
@@ -334,8 +327,8 @@
   },
   "pulseaudio#mic": {
     "format": "{format_source}",
-    "format-source": "",
-    "format-source-muted": "",
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
     "tooltip-format": "{volume}% {format_source} ",
     "on-click": "pactl set-source-mute 0 toggle",
     "on-scroll-down": "pactl set-source-volume 0 -1%",
@@ -393,8 +386,7 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)   \n{ipaddr} | {frequency} MHz{icon} ",
     "tooltip-format-ethernet": "{ifname} 󰈀 \n{ipaddr} | {frequency} MHz{icon} ",
     "tooltip-format-disconnected": "Not Connected to any type of Network",
-    "tooltip": true,
-    "on-click": "pgrep -x rofi &>/dev/null && notify-send rofi || networkmanager_dmenu"
+    "tooltip": true
   },
 
     "custom/tailscale": {
