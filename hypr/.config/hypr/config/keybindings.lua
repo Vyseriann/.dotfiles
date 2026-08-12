@@ -25,7 +25,7 @@ local secondMod = "SUPER + SHIFT" -- Sets Shift + Cmd key as second modifier
 hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprlock"), { locked = true })
 
 --Terminal open, window close, shutdown, hyprlock
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 
 -- closeWindowBind:set_enabled(false)
