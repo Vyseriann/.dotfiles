@@ -41,6 +41,10 @@ PACKAGES=(
   "networkmanager"
   "swaync"
   "yay"
+  "zsh-autocomplete"
+  "zsh-autosuggestions"
+  "zsh-completions"
+  "starship"
 )
 
 sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
