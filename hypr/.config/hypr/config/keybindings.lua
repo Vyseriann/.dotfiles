@@ -36,7 +36,7 @@ hl.bind(
 hl.bind(secondMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- Apps
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
+hl.bind(secondMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(telegram))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(launcher))
@@ -50,7 +50,7 @@ hl.bind("Print + Space", hl.dsp.exec_cmd("hyprshot -m region")) --printscreen se
 
 -- Window float and fullscreen
 hl.bind(secondMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(secondMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 --hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
