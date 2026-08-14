@@ -3,12 +3,18 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+echo "Setting STOW core application configs..."
+stow nvim
+stow hypr
+stow ghostty
+stow waybar
+stow fastfetch
+
 echo "Updating system repositories..."
 sudo pacman -Syu --noconfirm
 
 echo "Installing core applications..."
 PACKAGES=(
-  "zsh"
   "curl"
   "neovim"
   "tmux"
@@ -23,7 +29,7 @@ PACKAGES=(
   "waybar"
   "tailscale"
   "bluetui"
-  "NetWorkManager
+  "NetWorkManager"
   "tlp"
   "brightnessctl"
   "fastfetch"
@@ -45,6 +51,8 @@ PACKAGES=(
   "zsh-autosuggestions"
   "zsh-completions"
   "starship"
+  "telegram-desktop"
+  "onlyoffice"
 )
 
 sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
@@ -62,5 +70,8 @@ echo "Installing Oh-My-ZSH..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Oh-My-ZSH instlled!"
+
+echo "Setting starship preset..."
+starship preset gruvbox-rainbow -o ~/.config/starship.toml
 
 echo "All packages installed perfectly!"

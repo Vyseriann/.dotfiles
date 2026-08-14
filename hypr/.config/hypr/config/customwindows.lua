@@ -2,7 +2,7 @@
 --- CUSTOM WINDOW BEHAVIOURS ---
 --------------------------------
 
--- fastfetch boot left top (workspace 1)
+-- fastfetch waybar
 hl.window_rule({
 	name = "fastfetch-popup",
 	match = {
@@ -11,10 +11,10 @@ hl.window_rule({
 	float = true,
 	size = { 677, 550 },
 	center = true,
-	no_initial_focus = true,
+	stay_focused = true,
 })
 
--- btop boot bottom left (workspace 1)
+-- btop waybar
 hl.window_rule({
 	name = "btop-diagnostic",
 	match = {
@@ -22,9 +22,22 @@ hl.window_rule({
 	},
 	opacity = "0.8 override",
 	float = true,
-	size = { 677, 366 },
+	size = { 700, 400 },
 	center = true,
-	no_initial_focus = true,
+	stay_focused = true,
+})
+
+-- htop waybar
+hl.window_rule({
+	name = "htop-diagnostic",
+	match = {
+		title = "htop-diagnostic",
+	},
+	opacity = "0.8 override",
+	float = true,
+	size = { 700, 400 },
+	center = true,
+	stay_focused = true,
 })
 
 -- WiFi Configurator (GUI Window)
@@ -64,7 +77,7 @@ hl.window_rule({
 		class = "org.pulseaudio.pavucontrol",
 	},
 	float = true,
-	size = { 400, 250 },
+	size = { 500, 300 },
 	-- Math: 1366 (Width) - 350 (Window) - 100 (Gap) =
 	move = { "monitor_w-window_x-100", 50 },
 	pin = true,

@@ -13,7 +13,7 @@ local launcher = "rofi -show drun -show-icons"
 local runner = "rofi -show run"
 local truenas = "chromium --app=https://192.168.18.7/ui/signin"
 local office = "onlyoffice-desktopeditors"
-local telegram = "chromium --app=https://web.telegram.org"
+local telegram = "Telegram"
 local obsidian = "obsidian"
 
 --Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more

@@ -245,13 +245,13 @@
  "cpu": {
     "interval": 2,
     "format": " {usage:02}%",
-    "on-click": "exec ghostty --title=btop -e btop"
+    "on-click": "exec ghostty --title=btop-diagnostic -e btop"
   },
 
   "memory": {
     "interval": 2,
     "format": " {percentage:02}%",
-    "on-click": "exec ghostty --title=htop -e htop"
+    "on-click": "exec ghostty --title=htop-diagnostic -e htop"
   },
 
   // GROUP/RIGHT3 MODULES //
